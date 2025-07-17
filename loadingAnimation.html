@@ -27,6 +27,12 @@
         //Every time loop goes through all frames, increase the cycle count
         if (index % frames.length === 0) {
           cycleCount++;
+
+          /* 
+          Creative idea: switch background color every loop
+          */
+          document.body.style.backgroundColor =
+            cycleCount % 2 === 0 ? "red" : "blue";
         }
         if (cycleCount >= maxCycles) {
           clearInterval(interval); //stops loop after max number of cycles
@@ -37,6 +43,8 @@
     }
 
     runLoadingAnimation(); //call function
+
+    
   </script>
 
 </body>
