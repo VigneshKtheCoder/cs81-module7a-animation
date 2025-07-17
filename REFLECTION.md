@@ -1,0 +1,5 @@
+1. I dont think any part of the code was confusing for me but some part that took a little bit more reading and understanding for me was using the modulo to get the index of the frame. At first, I didn't realize how it worked and what it was really doing, but then as I read the other parts of the code, I understood that the index % frames was just getting the index of the frames variable and then outputting that.
+
+2. The animation runs using the setinterval() function. However, the page was still responsive. The asynchronous code happens in the background without freezing the program. 
+
+3. I added a color-changing background every frame tick with a modulo. This animation makes it feel kind of suspenseful and also is catchy to the eye, watching the frames tick as well the color changing the background. Since the loading frames are bit too small, the user can see when the frames tick in a larger scale. 
