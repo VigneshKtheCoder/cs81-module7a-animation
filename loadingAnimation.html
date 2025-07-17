@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Animation Simulator</title>
+</head>
+<body style="font-family: monospace; text-align: center; padding-top: 100px; background-color: #f4f4f4;">
+
+  <div id="loader" style="font-size: 2rem; margin-bottom: 20px;">Loading...</div>
+  <div id="status">Please wait</div>
+
+  <script>
+    function runLoadingAnimation() {
+      const loader = document.getElementById("loader"); //Gets element "loader" using id from html to show animatio frames
+      const status = document.getElementById("status"); //Gets element "status" to display the status of loading
+
+      const frames = ["⏳", "⌛", ".", "..", "..."]; //Array variable to hold frames of animation
+      let index = 0; // variable current index of frames array
+      let cycleCount = 0; //variable of number of animation loops completed
+      const maxCycles = 10; //max number of loops/cycles before animation ends
+
+      const interval = setInterval(() => { //setinterval()creates a loop that runs the time that is given (500 ms)
+        //Updates text of loader with current animation frame
+        loader.textContent = frames[index % frames.length]; 
+        index++;
+      
+        //Every time loop goes through all frames, increase the cycle count
+        if (index % frames.length === 0) {
+          cycleCount++;
+        }
+        if (cycleCount >= maxCycles) {
+          clearInterval(interval); //stops loop after max number of cycles
+          loader.textContent = "✅"; //Show check mark emoji after animation stops
+          status.textContent = "Done!"; //Show done text after animation stops
+        }
+      }, 500); //500ms time in between each frame
+    }
+
+    runLoadingAnimation(); //call function
+  </script>
+
+</body>
+</html>
